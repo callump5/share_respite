@@ -25,7 +25,11 @@ SECRET_KEY = 'h&*$)qs*1^u@5n^xeu%m$h30v%e2n5sq=pau#r%q2ky4h_7dsb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '127.0.0.1:8000',
+    'share-respite-site.herokuapp.com',
+]
 
 
 # Application definition
