@@ -1,0 +1,28 @@
+.donation{
+    &__banner {
+        padding: 12rem 0;
+        background-image: url("/static/images/landing/back5.jpg");
+        background-color: #9a9a9a;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center center;
+
+        &--text {
+            color: white;
+            font-size: 1.5em;
+
+            & h2 {
+                color: #fdff5e;;
+            }
+
+            & p {
+                color: white;
+                font-size: 2.2rem;
+            }
+
+            &--ach {
+                font-size: 1.6rem !important;
+            }
+        }
+    }
+}

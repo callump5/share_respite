@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  padding: 3rem;
+  @include clearfix;
+  position: relative;
+    background-color: #08b2e3;
+    &__logo {
+        height: 10rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+  &__nav {
+      display: block;
+    text-align: center;
+      margin-bottom: 3rem;
+      &--item {
+        display: inline-block;
+        color: white;
+        font-size: 2.1rem;
+        padding: .5rem 0;
+        &:not(:last-child){
+          margin-right: 2rem
+        }
+
+      }
+  }
+
+    & p {
+       text-align: center;
+      color: white;
+      font-size: 2rem;
+    }
+}

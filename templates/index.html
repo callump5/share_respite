@@ -1,0 +1,104 @@
+{% load staticfiles %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Title Tag -->
+    <title>Share Respite - Safe Haven & Respite Environment</title>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Share Respite - Safe Haven & Respite Environment">
+    <meta name="description" content="Do you have a disabled child? (aged 3-19 years)As a registered charity we have
+        been supporting families since 1982. We offer a wide range of opportunities for young people with disabilities.
+        We do this through our holiday and out of school clubs with a range of fun activities within a happy safe and
+        relaxed environment. We have a high staff ratio and are all highly qualified and CRB checked,">
+    <meta name="keywords" content="Childs Respite, Disabled Children's Charity, Respite Care,">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- FB Meta Tags -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Share Respite - Safe Haven & Respite Environment" />
+    <meta property="og:url" content="sharerespite.co.uk" />
+    <meta property="og:site_name" content="Share Respite" />
+
+    <!-- Style -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lexend+Deca&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/js/slick/slick.css"/>
+    // Add the new slick-theme.css if you want the default styling
+    <link rel="stylesheet" type="text/css" href="/static/js/slick/slick-theme.css"/>
+
+
+
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static "scss/main.scss" %}"/>
+    {% endcompress %}
+
+
+
+
+    <!-- Scripts -->
+
+    <script src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/slick/slick.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.slideshow').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+            centerMode: true,
+              responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+          });
+        });
+      </script>
+</head>
+<body>
+
+    {% block index %}
+
+    {% endblock %}
+
+</body>
+</html>
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div> -->

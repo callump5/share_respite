@@ -1,0 +1,156 @@
+/* Reset */
+/* line 2, static/scss/base/_base.scss */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* line 10, static/scss/base/_base.scss */
+html {
+  font-size: 62.5%; }
+
+/* line 14, static/scss/base/_base.scss */
+body {
+  box-sizing: border-box; }
+
+/* line 18, static/scss/base/_base.scss */
+section {
+  padding: 3rem 0; }
+
+/* line 1, static/scss/base/_typography.scss */
+h1, h2, p, a {
+  font-family: 'Lexend Deca', sans-serif; }
+
+/* line 11, static/scss/base/_typography.scss */
+.heading__landing {
+  text-align: center;
+  font-size: 2rem;
+  color: white; }
+  /* line 15, static/scss/base/_typography.scss */
+  .heading__landing--main {
+    display: block;
+    margin: 0 auto 1rem auto; }
+  /* line 20, static/scss/base/_typography.scss */
+  .heading__landing--sub {
+    font-size: 4rem;
+    font-family: 'Indie Flower', cursive; }
+
+/* line 1, static/scss/base/_utilities.scss */
+.u-container {
+  width: 70%;
+  margin: 0 auto; }
+
+/* line 1, static/scss/components/_header.scss */
+.header {
+  width: 100%;
+  height: 8rem;
+  display: table;
+  clear: both; }
+  /* line 6, static/scss/components/_header.scss */
+  .header__logo-box {
+    position: absolute;
+    transform: translateY(-10%);
+    border-radius: 50%;
+    background-color: #39c5e3;
+    height: 11rem;
+    width: 11rem;
+    padding: 1rem;
+    z-index: 100;
+    box-shadow: 1px 1px 0.5rem 0.1rem black; }
+    /* line 17, static/scss/components/_header.scss */
+    .header__logo-box--logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 10rem; }
+  /* line 26, static/scss/components/_header.scss */
+  .header__nav {
+    float: right; }
+  /* line 30, static/scss/components/_header.scss */
+  .header__nav-link {
+    float: left;
+    transition: all .2s;
+    width: 9rem;
+    padding: 1rem 1rem 0 1rem; }
+    /* line 35, static/scss/components/_header.scss */
+    .header__nav-link--text {
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 1rem 0;
+      text-transform: uppercase;
+      color: #39c5e3;
+      transition: all; }
+
+/* line 47, static/scss/components/_header.scss */
+.icon:hover {
+  background-color: #39c5e3; }
+
+/* line 50, static/scss/components/_header.scss */
+.icon--home {
+  margin: 0 auto;
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  transition: all .2s;
+  background-image: url("/static/icons/home-blue.png"); }
+  /* line 53, static/scss/components/_header.scss */
+  .icon--home:hover {
+    background-image: url("/static/icons/home.png"); }
+
+/* line 2, static/scss/layout/_grid.scss */
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  /* line 6, static/scss/layout/_grid.scss */
+  .row:not(:last-child) {
+    margin-bottom: 2rem; }
+  /* line 9, static/scss/layout/_grid.scss */
+  .row::after {
+    content: '';
+    display: table;
+    clear: both; }
+  /* line 15, static/scss/layout/_grid.scss */
+  .row [class^='col-'] {
+    float: left; }
+    /* line 18, static/scss/layout/_grid.scss */
+    .row [class^='col-']:not(:last-child) {
+      margin-right: 6rem;
+      float: left; }
+  /* line 24, static/scss/layout/_grid.scss */
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  /* line 28, static/scss/layout/_grid.scss */
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  /* line 32, static/scss/layout/_grid.scss */
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  /* line 36, static/scss/layout/_grid.scss */
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  /* line 40, static/scss/layout/_grid.scss */
+  .row .col-2-of-4 {
+    width: calc(((100% - 6rem) / 2)); }
+  /* line 44, static/scss/layout/_grid.scss */
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+/* line 1, static/scss/pages/_home.scss */
+.landing {
+  position: relative;
+  background-image: url("/static/images/landing/adobe1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #959595;
+  background-blend-mode: multiply;
+  height: 80vh; }
+  /* line 11, static/scss/pages/_home.scss */
+  .landing__headers {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-60%) translateX(-50%); }

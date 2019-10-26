@@ -1,0 +1,48 @@
+h1, h2, p, a {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
+.heading{
+    &__landing {
+        text-align: center;
+        font-size: 2rem;
+        color: white;
+
+        &--main {
+            display: block;
+            margin: 0 auto 1rem auto;
+        }
+
+        &--sub {
+            font-size: 4rem;
+            font-family: 'Indie Flower', cursive;
+
+        }
+    }
+
+    &__primary {
+        background-color: #08b2e3;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 3.5rem;
+        color: white;
+    }
+
+    &__secondary {
+        font-size: 4rem;
+        text-align: center;
+
+        &--white{
+            color: white;
+        }
+    }
+}
+
+.paragraph {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #5f5f5f;
+    font-family: 'Roboto', sans-serif;
+}
