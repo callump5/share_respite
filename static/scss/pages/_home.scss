@@ -2,11 +2,12 @@
 /* Landing */
 .landing {
     position: relative;
-    background-image: url("/static/images/landing/back1.jpg");
-    background-size: cover;
+    background-image: url("/static/images/landing/back9.jpg");
+
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-color: #ffffff;
+    background-color: rgba(98, 98, 98, 0.77);
     background-blend-mode: multiply;
     height: 80vh;
 
@@ -98,15 +99,6 @@
 
 @media screen and (min-width: 1000px){
     .landing {
-    position: relative;
-    background-image: url("/static/images/landing/back9.jpg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-        background-color: rgba(121, 121, 121, 0.81);
-        background-blend-mode: multiply;
-
-    height: 80vh;
 
     &__headers {
         position: absolute;
