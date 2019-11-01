@@ -2,7 +2,7 @@
     &__banner {
         padding: 12rem 0;
         background-image: url("/static/images/landing/back5.jpg");
-        background-color: #9a9a9a;
+        background-color: rgba(121, 121, 121, 0.81);
         background-blend-mode: multiply;
         background-size: cover;
         background-position: center center;
@@ -10,10 +10,6 @@
         &--text {
             color: white;
             font-size: 1.5em;
-
-            & h2 {
-                color: #fdff5e;;
-            }
 
             & p {
                 color: white;

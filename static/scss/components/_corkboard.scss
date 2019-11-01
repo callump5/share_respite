@@ -1,0 +1,30 @@
+.corkboard {
+  background-image: url("/static/images/corkboard.jpg");
+  background-size: cover;
+  border: 8px solid burlywood;
+  padding: 1rem;
+}
+
+.sticky-note {
+  background-color: #f8ff7f;
+  padding: 1rem;
+  &:nth-child(even) {
+    background-color: #99f3fd;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  & p {
+    padding: 0 1rem 1rem 1rem;
+  }
+  &--pin {
+    display: block;
+    margin: 1rem auto;
+      background-color: red;
+    width: 15px;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.3rem rgba(40, 40, 40, 0.45);
+    height: 15px;
+    border-radius: 50%;
+  }
+}

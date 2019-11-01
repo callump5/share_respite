@@ -1,12 +1,33 @@
 @mixin clearfix {
-  display: table;
-  clear: both;
+    display: table;
+    width: 100%;
+    clear: both;
 }
 
 @mixin icon {
-  margin: 0 auto;
-  height: 4rem;
-  width: 4rem;
-  background-size: cover;
-  transition: all .2s;
+    margin: 0 auto;
+    height: 4rem;
+    width: 4rem;
+    background-size: cover;
+    transition: all .2s;
+}
+
+@mixin button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover{
+        transform: translateY(-.6rem);
+        transition: all .2s;
+    }
+}
+
+@mixin shadow {
+    box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
+
 }

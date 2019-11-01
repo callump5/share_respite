@@ -35,7 +35,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100,300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/static/js/slick/slick.css"/>
-    // Add the new slick-theme.css if you want the default styling
     <link rel="stylesheet" type="text/css" href="/static/js/slick/slick-theme.css"/>
 
 
@@ -53,45 +52,61 @@
     <script src="/static/js/jquery.js"></script>
     <script type="text/javascript" src="/static/js/slick/slick.min.js"></script>
 
-      <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function(){
-          $('.slideshow').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            arrows: true,
-            centerMode: true,
-              responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-          });
+            $('.slideshow').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true,
+                centerMode: true,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            arrows: false,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: true,
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+
+            $("#menu-icon").click(function () {
+                $('.header__nav').toggle("fast" )
+
+            });
+
+            $('.header__nav-link').click(function () {
+                address = $(this).find("a").attr("href");
+                window.location.href = address;
+            });
+
+            $('.home__read-more__card').click(function () {
+                address = $(this).find("a").attr("href");
+                window.location.href = address;
+            });
         });
-      </script>
+    </script>
 </head>
 <body>
 

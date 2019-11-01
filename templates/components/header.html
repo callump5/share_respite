@@ -1,46 +1,53 @@
 <header class="header">
 
-        <div class="header__contact">
-            <div class="u-container">
-                <p class="header__contact--phone">01702667455</p>
-                <p class="header__contact--email">share.enquireies@gmail.com</p>
-            </div>
+    <div class="header__contact">
+        <div class="u-container">
+            <p class="header__contact--phone">01702667455</p>
+            <p class="header__contact--email">share.enquireies@gmail.com</p>
         </div>
+    </div>
 
     <div class="u-container">
-        <div class="header__logo-box">
-            <img class="header__logo-box--logo" src="/static/images/logo/logo.png" alt="Share Respite Logo"/>
+        <div class="header__header">
+            <div class="header__logo-box">
+                <img class="header__logo-box--logo" src="/static/images/logo/logo.png" alt="Share Respite Logo"/>
+            </div>
 
+            {% include 'icons/menu-icon.html' %}
         </div>
 
         <nav class="header__nav">
             <div class="header__nav-link">
                 {% include 'icons/home-icon.html' %}
-                <p class="header__nav-link--text">Home</p>
+                <a  href="/" class="header__nav-link--text">Home</a>
+            </div>
+            <div class="header__nav-link">
+                {% include 'icons/info-icon.html' %}
+                <a href="/information" class="header__nav-link--text">Info</a>
             </div>
             <div class="header__nav-link">
                 {% include 'icons/van-icon.html' %}
-                <p class="header__nav-link--text">Activities</p>
-            </div>
-            <div class="header__nav-link">
-                {% include 'icons/review-icon.html' %}
-                <p class="header__nav-link--text">Reviews</p>
+                <a href="/activites" class="header__nav-link--text">Activities</a>
             </div>
             <div class="header__nav-link">
                 {% include 'icons/staff-icon.html' %}
-                <p class="header__nav-link--text">Staff</p>
+                <a href="/staff" class="header__nav-link--text">Staff</a>
             </div>
             <div class="header__nav-link">
-                {% include 'icons/donations-icon.html' %}
-                <p class="header__nav-link--text">Donations</p>
+                {% include 'icons/review-icon.html' %}
+                <a href="/reviews" class="header__nav-link--text">Reviews</a>
             </div>
             <div class="header__nav-link">
                 {% include 'icons/policy-icon.html' %}
-                <p class="header__nav-link--text">Policies</p>
+                <a href="/policies" class="header__nav-link--text">Policies</a>
+            </div>
+            <div class="header__nav-link">
+                {% include 'icons/donations-icon.html' %}
+                <a href="/donations" class="header__nav-link--text">Donations</a>
             </div>
             <div class="header__nav-link">
                 {% include 'icons/contact-icon.html' %}
-                <p class="header__nav-link--text">Contact</p>
+                <a href="/contact" class="header__nav-link--text">Contact</a>
             </div>
         </nav>
     </div>

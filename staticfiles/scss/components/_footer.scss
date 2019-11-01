@@ -1,9 +1,10 @@
 .footer {
-  width: 100%;
-  padding: 3rem;
-  @include clearfix;
-  position: relative;
-    background-color: #08b2e3;
+    width: 100%;
+    padding: 3rem;
+    @include clearfix;
+    position: relative;
+    background-color: #d6d6d6;
+
     &__logo {
         height: 10rem;
         position: absolute;
@@ -13,7 +14,7 @@
 
   &__nav {
       display: block;
-    text-align: center;
+      text-align: center;
       margin-bottom: 3rem;
       &--item {
         display: inline-block;
@@ -29,7 +30,7 @@
 
     & p {
        text-align: center;
-      color: white;
-      font-size: 2rem;
+        color: white;
+        font-size: 2rem;
     }
 }

@@ -1,5 +1,138 @@
+.slide {
+    &:hover &__inner {
+    }
+
+    &__inner {
+    }
+    &__card {
+        &--front {
+            box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
+
+            &--img {
+                width: 100%;
+                height: 30rem;
+                background-size: cover;
+                background-position: center;
+            }
+            &--staff {
+                text-align: center;
+                font-size: 3rem;
+                padding: 1rem 0 0 0;
+                color: #08b2e3;
+            }
+
+            &--role {
+                text-align: center;
+                font-size: 2rem;
+                padding: .5rem 0 1rem 0;
+            }
+        }
+        &--back {
+            display: none;
+        }
+    }
+
+}
+
+.slick-slider {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.slick-slide {
+    height: 41rem;
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #282828;
+}
 
 
+@media screen and (min-width: 1000px) {
+    .slick-slider {
+        width: 100%;
+    }
+
+    .slick-slide {
+        width: 25rem !important;
+    }
+
+
+.slide {
+    cursor: pointer;
+    &:hover &__inner {
+        transform: rotateY(180deg);
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    &__card {
+        &--front {
+            width: 100%;
+            box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
+            position: absolute;
+            backface-visibility: hidden;
+            &--img {
+                width: 100%;
+                height: 30rem;
+                background-size: cover;
+                background-position: center;
+            }
+            &--staff {
+                text-align: center;
+                font-size: 3rem;
+                padding: 1rem 0 0 0;
+                color: #08b2e3;
+            }
+
+            &--role {
+                text-align: center;
+                font-size: 2rem;
+                padding: .5rem 0 1rem 0;
+            }
+        }
+
+        &--back {
+            display: block;
+            height: 38.8rem;
+            width: 100%;
+            box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
+            position: absolute;
+            backface-visibility: hidden;
+            background-color: white;
+            transform: rotateY(180deg);
+
+            &--staff {
+                font-size: 2.3rem;
+                padding: 1rem 0 2rem 0;
+                color: #08b2e3;
+            }
+            &:last-child {
+                 padding:2rem 1rem;
+            }
+        }
+    }
+
+}
+
+.slick-slide {
+    height: 41rem;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #282828;
+}
+
+}
+/*
 .slide {
     cursor: pointer;
     &:hover &__inner {
@@ -42,7 +175,7 @@
             }
         }
         &--back {
-            height: 40rem;
+            height: 38.8rem;
             width: 29rem;
             margin-left: 1rem;
             margin-right: 1rem;
@@ -69,3 +202,4 @@
 .slick-prev:before, .slick-next:before {
     color: #282828;
 }
+*/

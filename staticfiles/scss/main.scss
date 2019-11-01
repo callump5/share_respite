@@ -8,6 +8,8 @@
 
 @import "components/donations_banner";
 @import "components/button";
+@import "components/contact-form";
+@import "components/corkboard";
 @import "components/sponsers";
 @import "components/header";
 @import "components/slideshow";
@@ -15,4 +17,6 @@
 
 @import "layout/grid";
 
+@import "pages/activities";
 @import "pages/home";
+@import "pages/info";

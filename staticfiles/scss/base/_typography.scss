@@ -1,4 +1,4 @@
-h1, h2, p, a {
+h1, h2, p, a, th, td{
     font-family: 'Lexend Deca', sans-serif;
 }
 
@@ -27,6 +27,14 @@ h1, h2, p, a {
         padding: 1rem 0;
         font-size: 3.5rem;
         color: white;
+
+        &--padded {
+            background-color: #08b2e3;
+            text-align: center;
+            padding: 4rem 0;
+            font-size: 3.5rem;
+            color: white;
+        }
     }
 
     &__secondary {
@@ -34,6 +42,7 @@ h1, h2, p, a {
         text-align: center;
 
         &--white{
+        font-size: 4rem;
             color: white;
         }
     }

@@ -1,0 +1,36 @@
+#mobile-table {
+  display: none;
+}
+
+.activity {
+  & .u-container {
+    overflow-x: scroll;
+  }
+
+}
+table {
+  @include shadow;
+    width: 100%;
+    text-align: left;
+    border-spacing:0 0;
+    border-radius: .5rem;
+    & thead {
+        font-size: 1.5rem;
+
+      & th {
+        color: #08b2e3;
+        padding: 2rem 2rem .5rem 0  ;
+        border-bottom: 2px solid rgba(224, 224, 224, 0.72);
+      }
+    }
+
+  & tbody {
+    & td {
+      font-size: 1.4rem;
+        padding: 2rem 2rem 2rem 0  ;
+        border-bottom: 2px solid rgba(224, 224, 224, 0.72);
+
+    }
+
+  }
+}

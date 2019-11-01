@@ -1,3 +1,5 @@
+
+/* Landing */
 .landing {
     position: relative;
     background-image: url("/static/images/landing/back1.jpg");
@@ -13,7 +15,113 @@
         top: 50%;
         left: 50%;
         transform: translateY(-60%) translateX(-50%);
+
+        &--logo{
+            height: 20rem
+        }
     }
+}
+
+
+.home {
+    &__img {
+        &--1 {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__read-more{
+        &__card {
+            height: 40rem;
+            padding: 5rem 4rem;
+            background-color: white;
+            @include shadow;
+            transition: all .2s;
+            cursor: pointer;
+            width: 70%;
+            margin: 0 auto 4rem auto;
+            & > svg {
+                fill: #08b2e3;
+                display: block;
+                margin: 0 auto;
+                height: 10rem;
+                width: 10rem;
+            }
+            &--header {
+                text-align: center;
+                font-size: 2.3rem;
+                padding: 1.5rem 0;
+            }
+            &--text {
+                font-size: 1.7rem;
+                text-align: center;
+            }
+            &--read-more {
+                font-size: 1.9rem;
+                text-align: center;
+                margin-left: 2rem;
+                color: black;
+                text-decoration: none;
+                &::after {
+                    content: '\2192';
+                    margin-left: 1rem;
+                    color: #08b2e3;
+                }
+            }
+
+            &:hover {
+              transform: translateY(-1rem);
+            }
+        }
+    }
+
+
+    &__about {
+
+        &--img {
+            width: 100%;
+        }
+
+        &--text-box {
+            background-color: #08b2e3;
+            padding: 3rem 4rem;
+
+            & p {
+                color: white;
+
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1000px){
+    .landing {
+    position: relative;
+    background-image: url("/static/images/landing/back9.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+        background-color: rgba(121, 121, 121, 0.81);
+        background-blend-mode: multiply;
+
+    height: 80vh;
+
+    &__headers {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-60%) translateX(-50%);
+
+        &--logo {
+            height: 25rem;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
 }
 
 .home {
@@ -28,9 +136,11 @@
             height: 40rem;
             padding: 5rem 4rem;
             background-color: white;
-            box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
+            @include shadow;
             transition: all .2s;
             cursor: pointer;
+            margin: 0;
+            width: 100%;
             & > svg {
                 fill: #08b2e3;
                 display: block;
@@ -72,13 +182,13 @@
         &--img {
             position: absolute;
             right: 0;
-            top: 6rem;
+            top: 3rem;
             width: 50%;
         }
 
         &--text-box {
             position: absolute;
-            bottom: 6rem;
+            bottom: 3rem;
             z-index: 3;
             width: 60%;
             background-color: #08b2e3;
@@ -91,3 +201,9 @@
         }
     }
 }
+
+}
+
+
+/*
+*/
