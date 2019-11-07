@@ -32,6 +32,6 @@ urlpatterns = [
     path('staff', staff_views.get_staff),
     path('reviews', review_views.get_reviews),
     path('policies', policy_views.get_policies),
-    path('donations', donations_views.get_donations),
+    path('fundraising', donations_views.get_donations),
     path('contact', contact_views.get_contact)
 ]
