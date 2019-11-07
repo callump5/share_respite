@@ -1,0 +1,57 @@
+.reviews {
+
+  overflow: hidden;
+}
+.chalkboard {
+  height: 55rem;
+  background-image: url("/static/images/blackboard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.8rem solid burlywood;
+  padding: 5rem;
+  overflow: hidden;
+
+  &__slider {
+    position: absolute;
+    height: 44rem;
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+
+  }
+
+  &__review {
+    color: white;
+    font-size: 2.4rem;
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+
+    &--text {
+
+    }
+
+    &--author {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px){
+
+
+  .chalkboard {
+    height: 35rem;
+
+    &__slider {
+      height: 24rem;
+      width: 80%;
+
+    }
+
+  }
+}

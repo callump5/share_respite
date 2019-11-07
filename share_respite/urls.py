@@ -19,10 +19,19 @@ from home import views as home_views
 from info import views as info_views
 from activities import views as activity_views
 from staff import views as staff_views
+from reviews import views as review_views
+from policies import views as policy_views
+from donations import views as donations_views
+from contact import views as contact_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_views.index),
     path('information', info_views.get_info),
     path('activites', activity_views.get_activites),
-    path('staff', staff_views.get_staff)
+    path('staff', staff_views.get_staff),
+    path('reviews', review_views.get_reviews),
+    path('policies', policy_views.get_policies),
+    path('donations', donations_views.get_donations),
+    path('contact', contact_views.get_contact)
 ]

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block base %}
+
+
+    <h1 class="heading__primary--padded">Donations</h1>
+    <section class="donations">
+        <div class="u-container">
+
+            <div class="row">
+                <div class="col-2-of-3">
+                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias consectetur consequuntur doloremque eos expedita hic illum ipsam magnam maxime nihil officia pariatur, quas quibusdam quos. Animi molestias provident qui.</p>
+                    <br>
+                    <p class="paragraph u-margin-small">Any donations would be greatly appreciated, and 100% of what you donate will be put towards the children.</p>
+                    <p class="donation__banner--text--ach u-margin-big">Achieved: <span>£1024.32</span></p>
+
+
+                </div>
+                <div class="col-1-of-3">
+                    <form class="donations__form">
+                        <label>Cardholder Name</label>
+                        <input class="donations__form--input" placeholder="John Smith" type="text">
+
+                        <label>Donation</label>
+                        <input class="donations__form--input" placeholder="10.00" type= text>
+
+                        <label>Credit Card Number</label>
+                        <input class="donations__form--input" placeholder="4242424242424242" type="text">
+
+                        <label>CVV</label>
+                        <input class="donations__form--input" placeholder="415" type="text">
+                        <div class="u-margin-big">
+                            <label>Expiry Month</label>
+                            <input placeholder="Jan" type="text">
+
+                            <label>Expiry Year</label>
+                            <input placeholder="3000" type="text">
+
+                        </div>
+                        <button class="u-float-left button__secondary" type="submit">Donate</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

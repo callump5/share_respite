@@ -1,0 +1,28 @@
+.donations{
+  &__form {
+  @include clearfix;
+    padding: 3rem;
+    background-color: #08b2e3;
+    & label {
+      float: left;
+      padding-bottom: 0;
+    }
+
+    & input {
+      width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid white;
+        padding: 1rem 0 .5rem 0;
+        color: white;
+        font-size: 1.7rem;
+        &::placeholder{
+            color: #f1f1f1;
+        }
+
+        &:not(:last-child){
+          margin-bottom: 2rem;
+        }
+    }
+  }
+}

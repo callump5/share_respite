@@ -1,55 +1,52 @@
 .staff-gallery {
-  & .u-container {
-    @include clearfix;
-    width: 90%;
-    text-align: center;
-  }
-  &__staff {
-    @include clearfix;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 2rem;
-    @include shadow;
-    background-color: white;
-    &:nth-child(odd){
-      margin-right: 3rem;
+    & .u-container {
+        @include clearfix;
+        width: 90%;
+        text-align: center;
     }
-    &__img{
-      width: 50%;
-      height: 30rem;
-      background-size: cover;
-      background-position: center;
-      float: left;
+    &__staff {
+        @include clearfix;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 2rem;
+        @include shadow;
+        background-color: white;
+        &__img{
+            width: 50%;
+            height: 33rem;
+            background-size: cover;
+            background-position: center;
+            float: left;
+        }
+        &__text {
+            width: 50%;
+            padding: 1rem;
+            float: right;
+            &--staff {
+                font-size: 1.9rem;
+                color: #08b2e3;
+            }
+            &--role {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                font-family: Raleway, sans-serif;
+                font-weight: lighter;
+            }
+            &--bio {
+                font-size: 1.4rem;
+            }
+        }
     }
-    &__text {
-      width: 50%;
-      padding: 1rem;
-      float: right;
-
-      &--staff {
-        font-size: 1.9rem;
-        color: #08b2e3;
-      }
-      &--role {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        font-family: Raleway, sans-serif;
-        font-weight: lighter;
-      }
-
-      &--bio {
-        font-size: 1.4rem;
-      }
-    }
-  }
 }
 
 @media screen and (min-width: 1000px) {
   .staff-gallery {
-    &__staff {
-
-      width: calc((100% - 6rem) / 2);
-    }
+      &__staff {
+          width: calc((100% - 6rem) / 2);
+          &:nth-child(odd){
+              margin-right: 3rem;
+          }
+      }
   }
 
 }

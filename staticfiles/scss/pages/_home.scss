@@ -4,7 +4,7 @@
     position: relative;
     background-image: url("/static/images/landing/back9.jpg");
 
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-color: rgba(98, 98, 98, 0.77);
@@ -99,6 +99,7 @@
 
 @media screen and (min-width: 1000px){
     .landing {
+    background-size: 100% auto;
 
     &__headers {
         position: absolute;
@@ -196,6 +197,3 @@
 
 }
 
-
-/*
-*/
