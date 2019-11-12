@@ -45,7 +45,12 @@ INSTALLED_APPS = [
     'activities',
     'info',
     'staff',
-    'compressor'
+    'policies',
+    'reviews',
+    'donations',
+    'contact',
+    'compressor',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -149,3 +154,10 @@ COMPRESS_PRECOMPILERS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# STRIPE
+STRIPE_SECRET_KEY = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_caLAMi5hXVyU8cYdjeN0J2Bo'
+import stripe
+stripe.api_key = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
+

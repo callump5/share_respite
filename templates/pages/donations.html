@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 
+{% block head_js %}
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script src="/static/js/payment.js"></script>
+
+{% endblock %}
+
+{% block page_header %}
+    <h1 class="heading__primary--padded">Fundraising</h1>
+{% endblock %}
+
 {% block base %}
 
 
-    <h1 class="heading__primary--padded">Fundraising</h1>
     <section class="donations">
         <div class="u-container">
 
@@ -12,37 +21,60 @@
                     <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias consectetur consequuntur doloremque eos expedita hic illum ipsam magnam maxime nihil officia pariatur, quas quibusdam quos. Animi molestias provident qui.</p>
                     <br>
                     <p class="paragraph u-margin-small">Any donations would be greatly appreciated, and 100% of what you donate will be put towards the children.</p>
-                    <p class="donation__banner--text--ach u-margin-big">Achieved: <span>£1024.32</span></p>
-
+                    <p class="donation__banner--text--ach u-margin-big">Achieved: <span>{{ ach }}</span></p>
 
                 </div>
                 <div class="col-1-of-3">
-                    <form class="donations__form">
-                        <label>Cardholder Name</label>
-                        <input class="donations__form--input" placeholder="John Smith" type="text">
-
-                        <label>Donation</label>
-                        <input class="donations__form--input" placeholder="10.00" type= text>
-
-                        <label>Credit Card Number</label>
-                        <input class="donations__form--input" placeholder="4242424242424242" type="text">
-
-                        <label>CVV</label>
-                        <input class="donations__form--input" placeholder="415" type="text">
-                        <div class="u-margin-big">
-                            <label>Expiry Month</label>
-                            <input placeholder="Jan" type="text">
-
-                            <label>Expiry Year</label>
-                            <input placeholder="3000" type="text">
-
-                        </div>
-                        <button class="u-float-left button__secondary" type="submit">Donate</button>
-
-                    </form>
+                <form id="donation-form" method="post" class="donations__form">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input id="validate_card_btn" type="button" value="Validate" class="donations__form--button">
+                    <input id="form-submit" type="submit" value="Submit" class="donations__form--button">
+                </form>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <script type="text/javascript">
+
+    $('#donation-form').find('label').addClass('donations__form--label');
+    $('#donation-form').find('input').addClass('donations__form--input');
+    $('#validate_card_btn').removeClass('donations__form--input');
+    $('#form-submit').removeClass('donations__form--input');
+
+    $('#form-submit').attr("disabled", true);
+
+    $('#validate_card_btn').on('click', function () {
+        // This identifies your website in the createToken call below
+        Stripe.setPublishableKey('{{ STRIPE_PUBLISHABLE_KEY }}');
+
+        var card = {
+            number:   $("#id_credit_card_number").val(),
+            expMonth: $("#id_expiry_month").val(),
+            expYear:  $("#id_expiry_year").val(),
+            cvc:      $("#id_cvv").val()
+        };
+
+        Stripe.createToken(card, function(status, response) {
+            if (status === 200) {
+                console.log(status, response);
+                $("#credit-card-errors").hide();
+                $("#id_stripe_id").val(response.id);
+                $("#form-submit").attr("disabled", false);
+            } else {
+                $("#stripe-error-message").text(response.error.message);
+                $("#credit-card-errors").show();
+            }
+        });
+
+        return false;
+
+    });
+
+
+
+
+    </script>
+
 {% endblock %}

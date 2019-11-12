@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
-{% block base %}
+{% block page_header %}
     <h1 class="heading__primary--padded">Activities</h1>
+{% endblock %}
+
+{% block base %}
     <section class="activity">
         <div class="u-container">
             <table class="activity__table">
@@ -15,20 +18,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>25th June</td>
-                        <td>In the Garden: Get muddy and help make a mud kitchen or welly boot planting! Then, make a chocolate rocky road cake or your own fruit smoothie!</td>
-                        <td>Spare clothes, Packed lunch</td>
-                        <td>At share</td>
-                        <td>22</td>
-                    </tr>
-                    <tr>
-                        <td>25th June</td>
-                        <td>In the Garden: Get muddy and help make a mud kitchen or welly boot planting! Then, make a chocolate rocky road cake or your own fruit smoothie!</td>
-                        <td>Spare clothes, Packed lunch</td>
-                        <td>At share</td>
-                        <td>22</td>
-                    </tr>
+                    {% for activity in activities %}
+                        <tr>
+                            <td>{{ activity.date.day }}/{{ activity.date.month }}</td>
+                            <td><span class="u-bold">{{ activity.title }}</span> - {{ activity.activity}}!</td>
+                            <td>{{ activity.items }}</td>
+                            <td>{{ activity.meeting }}</td>
+                            <td>{{ activity.slots }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

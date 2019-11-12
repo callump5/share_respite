@@ -11,20 +11,18 @@
     </section>
 
 
-    <h1 class="heading__primary"><div class="u-container">Do you have a disabled child? (aged 3-19 years)</div></h1>
+    <h1 class="heading__primary"><div class="u-container">Do you htai a disabled child? (aged 3-19 years)</div></h1>
 
     <div class="u-container">
         <section class="home">
             <div class="row">
                 <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="/static/images/landing/back4.jpg"></div>
-                <div class="col-1-of-2">
-                    <p class="paragraph">
-                        We’ve created activities that are fun, smart, and save the day when school is out. We have preschool and school-age programs that kids love. We offer flexible scheduling options to meet the needs of busy families like yours.
-                        <br><br>
-                        Every child is different, but they all have one thing in common. They like to have fun! That’s why we’ve designed many different programs for summertime that are safe, conveniently located and flexible enough to work with your busy schedule.
-                        <br><br>
-                        As a registered charity we have been supporting families since 1982. Not only will your child have a chance to be part of something they are already interested in but they’ll have a chance to discover something brand new
-                    </p>
+                <div class="col-1-of-2 u-autoescaped">
+                    {% for text in landing %}
+                        {% autoescape off %}
+                            {{ text.text }}
+                        {% endautoescape %}
+                    {% endfor %}
                 </div>
             </div>
 
@@ -62,9 +60,13 @@
 
     <div class="u-offset">
         <section class="u-container home__about">
-                <div class="home__about--text-box">
-                    <h2 class="heading__secondary heading__secondary--white u-text-left u-margin-medium"><span class="u-underline">Ab</span>out Us</h2>
-                    <p class="paragraph u-text-left">As a registered charity we have been supporting families since 1982. We offer a wide range of opportunities for young people with disabilities . We do this through our holiday and out of school clubs with a range of fun activities within a happy safe and relaxed environment. We have a high staff ratio and are all highly qualified and CRB checked.</p>
+                <div class="home__about--text-box u-autoescaped">
+                    <h2 class="heading__secondary heading__secondary--white u-text-left u-margin-small"><span class="u-underline">Ab</span>out Us</h2>
+                    {% for text in about %}
+                        {% autoescape off %}
+                            {{ text.text }}
+                        {% endautoescape %}
+                    {% endfor %}
                 </div>
             <img class="home__about--img" alt="Home image 2" src="/static/images/landing/back7.jpg">
         </section>
@@ -73,93 +75,29 @@
     <section class="home__staff">
         <div class="u-container">
 
-            <h2 class="heading__secondary u-margin-big"><span class="u-underline-blue">Me</span>et The Team</h2>
+            <h2 class="heading__secondary u-margin-medium"><span class="u-underline-blue">Me</span>et The Team</h2>
 
             <div class="slideshow">
-                <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_1.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
-                        </div>
-                    </div>
-                </div>
-                 <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_2.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
+                {% for staff in staff %}
+                    <!--slide-->
+                    <div class="slide">
+                        <div class="slide__inner">
+                            <div class="slide__card--front">
+                                <div class="slide__card--front--img" style="background-image: url( {{ staff.img.url }})"></div>
+                                <p class="slide__card--front--staff">{{ staff.first_name }}</p>
+                                <p class="slide__card--front--role">{{ staff.role }}</p>
+                            </div>
+                            <div class="slide__card--back">
+                                <p class="slide__card--back--staff">{{ staff.firt_name }} {{ staff.last_name }}</p>
+                                <div class="u-autoescaped u-text-smaller">
+                                    {% autoescape off %}
+                                        <p>{{ staff.bio | truncatewords:40 }}</p>
+                                    {% endautoescape %}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                 <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_3.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
-                        </div>
-                    </div>
-                </div>
-                 <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_4.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
-                        </div>
-                    </div>
-                </div>
-                 <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_3.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
-                        </div>
-                    </div>
-                </div>
-                 <!--slide-->
-                <div class="slide">
-                    <div class="slide__inner">
-                        <div class="slide__card--front">
-                            <div class="slide__card--front--img" style="background-image: url('/static/images/staff/staff_2.jpg')"></div>
-                            <p class="slide__card--front--staff">Trish</p>
-                            <p class="slide__card--front--role">Deputy Manager</p>
-                        </div>
-                        <div class="slide__card--back">
-                            <p class="slide__card--back--staff">John Doe</p>
-                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, eum impedit labore numquam odit tenetur totam. Aspernatur at, atque doloribus eos, explicabo fugiat harum magnam natus, praesentium provident recusandae sed.</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -169,11 +107,12 @@
             <div class="donation__banner--text">
                 <h2 class="heading__secondary u-text-left u-margin-small">Donations For Share</h2>
                 <p class="paragraph u-text-left u-margin-small">Any donations would be greatly appreciated, and 100% of what you donate will be put towards the children.</p>
-                <p class="donation__banner--text--ach u-margin-medium">Achieved: <span>£1024.32</span></p>
+                <p class="donation__banner--text--ach u-margin-medium">Achieved: <span>{{ ach }}</span></p>
                 <a href="/fundraising" class="button button__primary">Find Out More</a>
             </div>
         </div>
     </section>
+
 
 
 {% endblock %}

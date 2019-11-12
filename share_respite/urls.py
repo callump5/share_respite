@@ -23,6 +23,9 @@ from reviews import views as review_views
 from policies import views as policy_views
 from donations import views as donations_views
 from contact import views as contact_views
+from django.conf.urls.static import static
+
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,3 +38,6 @@ urlpatterns = [
     path('fundraising', donations_views.get_donations),
     path('contact', contact_views.get_contact)
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

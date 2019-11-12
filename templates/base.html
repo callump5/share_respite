@@ -2,10 +2,22 @@
 
 {% block index %}
     {% include 'components/header.html' %}
-    
-        {% block base %}
 
-        {% endblock %}
+    {% block page_header %}
+
+    {% endblock %}
+
+    {% if messages %}
+        <ul class="messages u-container">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    {% block base %}
+
+    {% endblock %}
 
     {% include 'components/footer.html' %}
 {% endblock %}

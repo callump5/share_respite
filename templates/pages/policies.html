@@ -1,34 +1,27 @@
 {% extends 'base.html' %}
 
+    {% block page_header %}
+        <h1 class="heading__primary--padded">Policies</h1>
+    {% endblock %}
 {% block base %}
-
-    <h1 class="heading__primary--padded">Policies</h1>
     <section class="policies">
         <div class="u-container">
-            <div class="policies__table">
-                <h2 class="policies__table--heading">Health & Saftey</h2>
-                <div class="policies__table__entry">
-                    <p class="policies__table__entry--title">Health & Saftey</p>
-                    <a class="policies__table__entry--link" href="/static/images/corkboard.jpg"><img src="/static/icons/file_download.png"></a>
-                </div>
-                <div class="policies__table__entry">
-                    <p class="policies__table__entry--title">Fire Escape Plan</p>
-                    <a class="policies__table__entry--link" href="/static/images/corkboard.jpg"><img src="/static/icons/file_download.png"></a>
-                </div>
-            </div>
 
-            <div class="policies__table">
-                <h2 class="policies__table--heading">Epilipsy Training</h2>
-                <div class="policies__table__entry">
-                    <p class="policies__table__entry--title">Health & Saftey</p>
-                    <a class="policies__table__entry--link" href="/static/images/corkboard.jpg"><img src="/static/icons/file_download.png"></a>
-                </div>
-                <div class="policies__table__entry">
-                    <p class="policies__table__entry--title">Training</p>
-                    <a class="policies__table__entry--link" href="/static/images/corkboard.jpg"><img src="/static/icons/file_download.png"></a>
-                </div>
-            </div>
-
+            {% for category in categories %}
+                {% if category.policy_set.exists %}
+                    <h2 class="policies__table--heading">{{ category.category }}</h2>
+                    <div class="policies__table">
+                        {% for policy in policies %}
+                            {% if policy.id == category.id %}
+                                <div class="policies__table__entry">
+                                    <p class="policies__table__entry--title">{{ policy.title }}</p>
+                                    <a class="policies__table__entry--link" href="{{ policy.file.url }}"><img src="/static/icons/file_download.png"></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
 {% endblock %}

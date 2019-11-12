@@ -2,12 +2,9 @@
     <div class="u-container">
         <h2 class="heading__secondary u-margin-big">A Special Thanks To <span class="u-underline-blue">All</span> Our Sponsers</h2>
         <div class="row">
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponser_1.png')"></div>
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponser_2.jpg')"></div>
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponser_3.png')"></div>
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponser_4.png')"></div>
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponsers_5.jpg')"></div>
-            <div class="sponsers__sponser" style="background-image: url('/static/images/sponsers/sponser_6.png')"></div>
+            {% for sponser in sponsers %}
+                <a href="//{{ sponser.link }}"  target="_blank"><div class="sponsers__sponser" style="background-image: url({{ sponser.img.url }})"></div></a>
+            {% endfor %}
         </div>
     </div>
 </section>

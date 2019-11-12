@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block base %}
-
-
+{% block page_header %}
     <h1 class="heading__primary--padded">Contact Us</h1>
+{% endblock %}
+
+{% block base %}
     <section class="contact">
         <div class="u-container">
 
@@ -12,17 +13,18 @@
                 <div class="col-1-of-2">
                     <h2 class="u-margin-small">Opening Times</h2>
                     <ul class="contact__openings">
-                        <li>Monday | 9 - 6</li>
-                        <li>Tuesday | 9 - 6</li>
-                        <li>Wednesday | 9 - 6</li>
-                        <li>Thursday | 9 - 6</li>
-                        <li>Friday | 9 - 6</li>
+                        {% for opening in openings %}
+
+                            <li class="paragraph">{{ opening.day }} | {{ opening.opening }} - {{ opening.closing }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-1-of-2">
-                    <h2 class="u-margin-small">Share Respite</h2>
-                    <p class="contact__details">01268 521 691</p>
-                    <p class="contact__details">share.enquiries@gmail.com</p>
+                    {% for contact in contacts %}
+                        <h2 class="u-margin-small">{{ contact.name }}</h2>
+                        <p class="contact__details paragraph">{{ contact.number }}</p>
+                        <p class="contact__details paragraph">{{ contact.email }}</p>
+                    {% endfor %}
                 </div>
             </div>
         </div>

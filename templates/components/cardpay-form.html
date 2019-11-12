@@ -1,0 +1,57 @@
+<form id="donation-form" method="post" class="donations__form">
+    <p id="donation_fee" class="donations__form--donation">{{ donation }}</p>
+
+    {% csrf_token %}
+    {{ form }}
+    <input id="validate_card_btn" type="button" value="Validate" class="donations__form--button">
+    <input id="form-submit" value="Submit" class="donations__form--button">
+</form>
+
+
+    <script type="text/javascript">
+        $('#fee-submit').on('click', function () {
+            $('#id_donation')
+        })
+    </script>
+
+
+    <script type="text/javascript">
+
+    $('#donation-form').find('label').addClass('donations__form--label');
+    $('#donation-form').find('input').addClass('donations__form--input');
+    $('#validate_card_btn').removeClass('donations__form--input');
+    $('#form-submit').removeClass('donations__form--input');
+
+    $('#form-submit').attr("disabled", true);
+
+    $('#validate_card_btn').on('click', function () {
+        // This identifies your website in the createToken call below
+        Stripe.setPublishableKey('{{ STRIPE_PUBLISHABLE_KEY }}');
+
+        var card = {
+            number:   $("#id_credit_card_number").val(),
+            expMonth: $("#id_expiry_month").val(),
+            expYear:  $("#id_expiry_year").val(),
+            cvc:      $("#id_cvv").val()
+        };
+
+        Stripe.createToken(card, function(status, response) {
+            if (status === 200) {
+                console.log(status, response);
+                $("#credit-card-errors").hide();
+                $("#id_stripe_id").val(response.id);
+                $("#form-submit").attr("disabled", false);
+            } else {
+                $("#stripe-error-message").text(response.error.message);
+                $("#credit-card-errors").show();
+            }
+        });
+
+        return false;
+
+    });
+
+
+
+
+    </script>

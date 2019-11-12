@@ -1,28 +1,66 @@
-.donations{
-  &__form {
-  @include clearfix;
-    padding: 3rem;
-    background-color: #08b2e3;
-    & label {
-      float: left;
-      padding-bottom: 0;
+#validation-form {
+  display: none;
+}
+.donations {
+    & select {
+        float: right;
     }
 
-    & input {
-      width: 100%;
-        background-color: transparent;
-        border: none;
-        border-bottom: 2px solid white;
-        padding: 1rem 0 .5rem 0;
-        color: white;
-        font-size: 1.7rem;
-        &::placeholder{
-            color: #f1f1f1;
+    &__form {
+        @include clearfix;
+        padding: 3rem;
+        background-color: white;
+        @include shadow;
+
+        &--logo {
+          width: 100%;
+        }
+        &--donation {
+          font-size: 4rem;
+        }
+        & label {
+            float: left;
+            width: 70%;
+            text-align: left;
+            padding-bottom: 0;
+          color: unset;
+          margin-bottom: .5rem;
         }
 
-        &:not(:last-child){
-          margin-bottom: 2rem;
+        &--button {
+            width: 100%;
+            padding: 1rem 3rem;
+            border-radius: 2.5rem;
+            font-size: 1.6rem;
+            border: none;
+            background-color: #08b2e3;
+            color: white;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            &:disabled {
+                background: #dddddd;
+            }
+        }
+
+        &--input {
+            width: 100%;
+            background-color: transparent;
+          box-shadow: 0.1rem 0 .5rem .1rem rgba(233, 233, 233, 0.65);
+            border: 1px solid rgba(233, 233, 233, 0.65);
+          border-radius: 1rem;
+            padding: 1rem;
+            font-size: 1.7rem;
+            &::placeholder {
+                color: #f1f1f1;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
         }
     }
-  }
 }
