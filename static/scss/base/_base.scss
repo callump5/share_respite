@@ -20,3 +20,17 @@ section {
     padding: 3rem 0;
 }
 
+.messages {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    font-size: 1.7em;
+
+    &__error {
+        background-color: rgba(255, 73, 63, 0.85);
+    }
+
+    &__success {
+        background-color: rgba(75, 220, 130, 0.8);
+    }
+}

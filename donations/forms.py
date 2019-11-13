@@ -20,4 +20,5 @@ class DonationForm(forms.ModelForm):
     cvv = forms.CharField(label='CVV')
     expiry_month = forms.ChoiceField(choices=MONTH_CHOICES)
     expiry_year = forms.ChoiceField(choices=YEAR_CHOICES)
+    donation = forms.DecimalField( decimal_places=2, max_digits=6, widget=forms.HiddenInput)
     stripe_id = forms.CharField(widget=forms.HiddenInput)

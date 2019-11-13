@@ -1,30 +1,45 @@
-#validation-form {
-  display: none;
+#donation-form {
+  width: 30%;
+    display: none;
+    position: fixed;
+  z-index: 100;
+    top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
+
 .donations {
-    & select {
-        float: right;
-    }
 
     &__form {
+        position: relative;
         @include clearfix;
-        padding: 3rem;
-        background-color: white;
         @include shadow;
+        padding: 3rem 2rem;
+        background-color: white;
+
+      &--close {
+        float: right;
+        font-size: 2.5rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
 
         &--logo {
           width: 100%;
+          margin-bottom: 2rem;
         }
         &--donation {
-          font-size: 4rem;
+          font-size: 3rem;
         }
         & label {
             float: left;
             width: 70%;
             text-align: left;
             padding-bottom: 0;
-          color: unset;
-          margin-bottom: .5rem;
+          font-size: 1.5rem;
+            color: unset;
+            margin-bottom: .5rem;
         }
 
         &--button {
@@ -45,6 +60,16 @@
                 background: #dddddd;
             }
         }
+        & select {
+          width: 30%;
+        }
+    &--errors {
+      width: 100%;
+      color: red !important;
+      font-size: 2rem !important;
+      padding: 2rem 1rem 1rem 1rem;
+      display: none;
+    }
 
         &--input {
             width: 100%;
@@ -55,7 +80,7 @@
             padding: 1rem;
             font-size: 1.7rem;
             &::placeholder {
-                color: #f1f1f1;
+                color: #bdbdbd;
             }
 
             &:not(:last-child) {
@@ -63,4 +88,26 @@
             }
         }
     }
+}
+
+#credit-card-errors {
+  padding: 0;
+}
+.loader {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translateX(-50%) translateY(-50%);
+  display: none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

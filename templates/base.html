@@ -10,7 +10,7 @@
     {% if messages %}
         <ul class="messages u-container">
             {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
+                <li class="messages messages__{{ message.tags }}">{{ message }}</li>
             {% endfor %}
         </ul>
     {% endif %}
