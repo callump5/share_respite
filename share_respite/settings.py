@@ -161,3 +161,14 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_caLAMi5hXVyU8cYdjeN0J2Bo'
 import stripe
 stripe.api_key = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
 
+#Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'share.contactme@gmail.com'
+EMAIL_HOST_PASSWORD = 'Share123'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+#reCaptch
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LeUusIUAAAAAECFgxNPx1KTM9eeyTkooElvdB0c'

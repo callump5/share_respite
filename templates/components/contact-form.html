@@ -1,22 +1,25 @@
 <div class="contact-form__background">
     <div class="contact-form__container">
         <section class="contact-form">
-        <div class="">
             <h2 class="heading__secondary--white u-text-leftt u-margin-medium"><span class="u-underline">Get</span> In Touch</h2>
-            <form class="contact-form__form">
-                <input title="name" placeholder="Name" type="text">
 
-                <input title="email" placeholder="Email Address" type="text">
+            <form method="post">
+                {% csrf_token %}
+                {{ contact_form }}
 
-                <input title="phone" placeholder="Contact Number" type="text">
-
-                <input class="contact-form__form--message" title="message" placeholder="Message" type="text">
-                <button class="button__secondary" type="submit">Submit</button>
+                <div class="g-recaptcha u-margin-medium" data-sitekey="6LeUusIUAAAAAMLWKCl5_NWiNoNqhPN8W7m5ToQa"></div>
+                <button type="submit" class="contact-form__button button__secondary">Submit</button>
             </form>
-        </div>
     </section>
     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118289.10237325265!2d0.504412501978652!3d51.60774225539826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8c41816dc3cd9%3A0xc6ad3e05829b688f!2sShare!5e0!3m2!1sen!2suk!4v1572389443550!5m2!1sen!2suk" width="100%" height="40rem" style="border:0;" allowfullscreen=""></iframe>
 
 
     </div>
 </div>
+
+<script type="text/javascript">
+    $('#id_name').attr('placeholder', 'Full Name');
+    $('.contact-form #id_email').attr('placeholder', 'Email Address');
+    $('#id_number').attr('placeholder', 'Contact Number');
+    $('#id_message').attr('placeholder', 'Message');
+</script>

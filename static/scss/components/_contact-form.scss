@@ -1,18 +1,21 @@
 .contact-form label {
-
-        color: white;
-        font-size: 1.7rem;
-  padding-bottom: 1rem;
+  display: none;
 }
 .contact-form {
     background-color: #08b2e3;
     padding: 3rem;
-    & input {
+
+  & textarea {
+    height: 3.9rem;
+  }
+    & input, & textarea {
+      height: 2.9rem;
+
         width: 100%;
         background-color: transparent;
         border: none;
         border-bottom: 2px solid white;
-        padding: 1rem 0 .5rem 0;
+
         color: white;
         font-size: 1.7rem;
         &::placeholder{
@@ -27,14 +30,13 @@
 
 .map {
   border-top: 3px solid white !important;
-  height: 40rem;
+  height: 46.5rem;
 }
 
 @media screen and (min-width: 1000px){
     .contact-form {
         width: 50%;
         float: left;
-      height: 40rem;
     padding: 3rem 3rem 3rem 0;
 
         &__background {
@@ -52,7 +54,6 @@
         border-top: none !important;
         width: 50%;
         float: right;
-        height: 40rem;
         position: absolute;
     }
 }

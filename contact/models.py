@@ -26,3 +26,17 @@ class ContactDetail(models.Model):
     class Meta():
         verbose_name = 'Contact Detail'
         verbose_name_plural = '2 - Contact Details'
+
+class ContactRequest(models.Model):
+    name = models.CharField(max_length=300)
+    email = models.EmailField()
+    number = models.CharField(max_length=14)
+    message = models.CharField(max_length=600)
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta():
+        verbose_name = 'Contact Request'
+        verbose_name_plural = '3 - Contact Requests'
