@@ -1,7 +1,17 @@
+import os
+
 from django.db import models
 from django.core.validators import ValidationError
 from tinymce.models import HTMLField
 # Create your models here.
+
+
+def upload_site_img(instance, filename):
+    filename_base, filename_ext = os.path.splitext(filename)
+    return '%s%s' % (
+        filename_base,
+        filename_ext.lower(),
+    )
 
 
 def validate_only_one_instance(obj):
@@ -40,7 +50,7 @@ class HomeAboutText(models.Model):
 
 class Sponser(models.Model):
     name = models.CharField(max_length=300)
-    img = models.ImageField(upload_to='sponsers')
+    img = models.ImageField(upload_to=upload_site_img)
     link = models.TextField()
 
     def __str__(self):

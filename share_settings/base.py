@@ -161,3 +161,9 @@ EMAIL_USE_SSL = True
 
 #reCaptch
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LeUusIUAAAAAECFgxNPx1KTM9eeyTkooElvdB0c'
+
+#AWS
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_SECURE_URLS = True
+AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related query parameters for requests
+AWS_STORAGE_BUCKET_NAME = 'share-respite'

@@ -1,5 +1,14 @@
+import os
 from django.db import models
 from tinymce.models import HTMLField
+
+
+def upload_site_img(instance, filename):
+    filename_base, filename_ext = os.path.splitext(filename)
+    return '%s%s' % (
+        filename_base,
+        filename_ext.lower(),
+    )
 
 # Create your models here.
 
@@ -19,7 +28,7 @@ class Staff(models.Model):
     last_name = models.CharField(max_length=300)
     role = models.ForeignKey(StaffRole, on_delete=models.CASCADE)
     bio = HTMLField()
-    img = models.ImageField(upload_to='staff/images')
+    img = models.ImageField(upload_to=upload_site_img)
     def __str__(self):
         return self.last_name
 
