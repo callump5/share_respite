@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.conf import settings
 
 from .models import Donation, DonationText
 from home.models import Sponser
@@ -15,13 +13,9 @@ from smtplib import SMTPAuthenticationError
 
 
 import requests
-from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY as GRK,STRIPE_PUBLISHABLE_KEY
+from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY as GRK, STRIPE_PUBLISHABLE_KEY
 
 from django.contrib import messages
-
-
-
-
 
 import stripe
 
@@ -41,9 +35,8 @@ def get_donations(request):
         ach += donation.donation
 
     if request.method == 'POST':
-
         contact_form = ContactRequestForm(request.POST)
-
+        form = DonationForm(request.POST)
         if contact_form.is_valid():
             ''' Begin reCAPTCHA validation '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -67,15 +60,6 @@ def get_donations(request):
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')
                 return redirect('/fundraising')
 
-        return redirect('/fundraising')
-
-    else:
-
-        contact_form = ContactRequestForm()
-
-
-    if request.method == 'POST':
-        form = DonationForm(request.POST)
         if form.is_valid():
             try:
                 customer = stripe.Charge.create(
@@ -95,8 +79,8 @@ def get_donations(request):
 
             return redirect('/fundraising')
     else:
+        contact_form = ContactRequestForm()
         form = DonationForm()
-
 
     args = {
         'sponsers':sponsers,
@@ -107,6 +91,5 @@ def get_donations(request):
 
         'STRIPE_PUBLISHABLE_KEY': STRIPE_PUBLISHABLE_KEY
     }
-
 
     return render(request, 'pages/donations.html', args)
