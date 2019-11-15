@@ -1,9 +1,31 @@
 from django.db import models
 from django.conf import settings
+from django.core.validators import ValidationError
+
+from tinymce.models import HTMLField
 import stripe
 
-# Create your models here.
 
+def validate_only_one_instance(obj):
+    model = obj.__class__
+    if (model.objects.count() > 0 and
+            obj.id != model.objects.get().id):
+        raise ValidationError("Can only create 1 %s " % obj._meta.verbose_name)
+
+
+# Create your models here.
+class DonationText(models.Model):
+    text = HTMLField()
+
+    def __str__(self):
+        return "Donations Text"
+
+    class Meta():
+        verbose_name = "Donations Text"
+        verbose_name_plural = "1 - Donations Text"
+
+    def clean(self):
+        validate_only_one_instance(self)
 
 class Donation(models.Model):
     donation = models.DecimalField(max_digits=6, decimal_places=2, default=2.50)
@@ -42,4 +64,4 @@ class Donation(models.Model):
 
     class Meta():
         verbose_name = 'Donations'
-        verbose_name_plural = '1 - Donations'
+        verbose_name_plural = '2 - Donations'

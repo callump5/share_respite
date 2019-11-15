@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 
-from .models import Donation
+from .models import Donation, DonationText
 from home.models import Sponser
 
 from .forms import DonationForm
@@ -29,6 +29,8 @@ import stripe
 # Create your views here.
 
 def get_donations(request):
+
+    text = DonationText.objects.all()
 
     sponsers = Sponser.objects.all()
 
@@ -101,6 +103,7 @@ def get_donations(request):
         'ach':ach,
         'form':form,
         'contact_form': contact_form,
+        'text': text,
 
         'STRIPE_PUBLISHABLE_KEY': STRIPE_PUBLISHABLE_KEY
     }

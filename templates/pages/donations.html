@@ -17,9 +17,11 @@
 
             <div class="row">
                 <div class="col-2-of-3">
-                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias consectetur consequuntur doloremque eos expedita hic illum ipsam magnam maxime nihil officia pariatur, quas quibusdam quos. Animi molestias provident qui.</p>
-                    <br>
-                    <p class="paragraph u-margin-small">Any donations would be greatly appreciated, and 100% of what you donate will be put towards the children.</p>
+                   {% for text in text %}
+                       {% autoescape off %}
+                            {{ text }}
+                       {% endautoescape %}
+                   {% endfor %}
                     <p class="donation__banner--text--ach u-margin-big">Achieved: <span>{{ ach }}</span></p>
 
                 </div>
