@@ -15,7 +15,7 @@ from smtplib import SMTPAuthenticationError
 
 
 import requests
-from share_respite.settings import GOOGLE_RECAPTCHA_SECRET_KEY as GRK
+from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY as GRK,STRIPE_PUBLISHABLE_KEY
 
 from django.contrib import messages
 
@@ -102,7 +102,7 @@ def get_donations(request):
         'form':form,
         'contact_form': contact_form,
 
-        'STRIPE_PUBLISHABLE_KEY': settings.STRIPE_PUBLISHABLE_KEY
+        'STRIPE_PUBLISHABLE_KEY': STRIPE_PUBLISHABLE_KEY
     }
 
 
