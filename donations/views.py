@@ -13,7 +13,7 @@ from smtplib import SMTPAuthenticationError
 
 
 import requests
-from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY as GRK, STRIPE_PUBLISHABLE_KEY
+from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY, STRIPE_PUBLISHABLE_KEY
 
 from django.contrib import messages
 

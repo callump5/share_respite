@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import stripe
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -144,11 +145,6 @@ COMPRESS_PRECOMPILERS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# STRIPE
-STRIPE_SECRET_KEY = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
-STRIPE_PUBLISHABLE_KEY = 'pk_test_caLAMi5hXVyU8cYdjeN0J2Bo'
-import stripe
-stripe.api_key = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
 
 #Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -156,12 +152,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-
-#AWS
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_S3_SECURE_URLS = True       # use http instead of https
-AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related query parameters for requests
-AWS_STORAGE_BUCKET_NAME = 'sharegallerymedia'
-
-
