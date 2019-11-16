@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.conf import settings
 
 from .models import InformationText, StickyNote
 from home.models import Sponser
@@ -10,8 +11,6 @@ from contact.send_mail import my_send_mail, authError
 from smtplib import SMTPAuthenticationError
 
 import requests
-from share_respite.settings import GOOGLE_RECAPTCHA_SECRET_KEY as GRK
-
 
 
 # Create your views here.
@@ -29,7 +28,7 @@ def get_info(request):
             ''' Begin reCAPTCHA validation '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
-                'secret': GRK,
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
             r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)

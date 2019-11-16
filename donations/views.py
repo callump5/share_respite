@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.conf import settings
 
 from .models import Donation, DonationText
 from home.models import Sponser
@@ -6,17 +8,11 @@ from home.models import Sponser
 from .forms import DonationForm
 from contact.forms import ContactRequestForm
 
-
-
 from contact.send_mail import my_send_mail, authError
 from smtplib import SMTPAuthenticationError
 
 
 import requests
-from share_settings.base import GOOGLE_RECAPTCHA_SECRET_KEY, STRIPE_PUBLISHABLE_KEY
-
-from django.contrib import messages
-
 import stripe
 
 
@@ -41,7 +37,7 @@ def get_donations(request):
             ''' Begin reCAPTCHA validation '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
-                'secret': GRK,
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
             r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
@@ -89,7 +85,7 @@ def get_donations(request):
         'contact_form': contact_form,
         'text': text,
 
-        'STRIPE_PUBLISHABLE_KEY': STRIPE_PUBLISHABLE_KEY
+        'STRIPE_PUBLISHABLE_KEY': settings.STRIPE_PUBLISHABLE_KEY
     }
 
     return render(request, 'pages/donations.html', args)
