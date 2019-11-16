@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from aws import GOOGLE_RECAPTCHA_SECRET_KEY, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -154,13 +155,8 @@ stripe.api_key = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'share.contactme@gmail.com'
-EMAIL_HOST_PASSWORD = 'Share123'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-
-#reCaptch
-GOOGLE_RECAPTCHA_SECRET_KEY = '6LeUusIUAAAAAECFgxNPx1KTM9eeyTkooElvdB0c'
 
 #AWS
 
@@ -168,3 +164,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_SECURE_URLS = True       # use http instead of https
 AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related query parameters for requests
 AWS_STORAGE_BUCKET_NAME = 'sharegallerymedia'
+
+GOOGLE_RECAPTCHA_SECRET_KEY = GOOGLE_RECAPTCHA_SECRET_KEY
+
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+

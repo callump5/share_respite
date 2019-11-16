@@ -10,7 +10,7 @@ from smtplib import SMTPAuthenticationError
 
 
 import requests
-from share_respite.settings import GOOGLE_RECAPTCHA_SECRET_KEY as GRK
+from share_respite.settings import GOOGLE_RECAPTCHA_SECRET_KEY
 
 from django.contrib import messages
 
@@ -31,7 +31,7 @@ def get_contact(request):
             ''' Begin reCAPTCHA validation '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
-                'secret': GRK,
+                'secret': GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
             r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)

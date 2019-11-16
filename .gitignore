@@ -2,3 +2,5 @@
 node_modules
 aws.py
 aws
+/aws.py
+/aws
