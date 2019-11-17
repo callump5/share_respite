@@ -153,6 +153,9 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
-#Stripe
+#AWS
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_SECURE_URLS = True       # use http instead of https
+AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related query parameters for requests
 
-stripe.api_key = 'sk_test_QqxSYpwLmUKy36M4D3qwQKYv'
+AWS_STORAGE_BUCKET_NAME = 'sharegallerymedia'
