@@ -33,15 +33,17 @@
     }
 
 }
-
+.slick-track {
+    height: 42rem;
+}
 .slick-slider {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .slick-slide {
-    height: 41rem;
-    margin: 0 1rem;
+    height: 38rem;
+    margin: 1rem;
     text-align: center;
 }
 
