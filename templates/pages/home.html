@@ -21,8 +21,6 @@
         <section class="home">
             <div class="row">
                 <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{% for item in images %}{% if forloop.counter0 == 1 %}{{ item.img.url }}{% endif %}{% endfor %}"></div>
-
-            style="background-image: url(
                 <div class="col-1-of-2 u-autoescaped">
                     {% for text in landing %}
                         {% autoescape off %}
