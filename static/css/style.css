@@ -637,8 +637,6 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
       backface-visibility: hidden;
       background-color: white;
       transform: rotateY(180deg); }
-      .slide__card--back:hover {
-        overflow-y: scroll; }
       .slide__card--back--staff {
         font-size: 2.3rem;
         padding-bottom: .5rem;
