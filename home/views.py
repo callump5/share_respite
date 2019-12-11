@@ -26,10 +26,7 @@ def index(request):
     about = HomeAboutText.objects.all()
     staff = Staff.objects.all()
     sponsers = Sponser.objects.all()
-    image_1 = HomeImages.objects.get(pk=1)
-    image_2 = HomeImages.objects.all().get(pk=2)
-    image_3 = HomeImages.objects.all().get(pk=3)
-    image_4 = HomeImages.objects.all().get(pk=4)
+    images = HomeImages.objects.all()
 
     donations = Donation.objects.all()
     ach = 0
@@ -77,9 +74,6 @@ def index(request):
         'sponsers':sponsers,
         'ach': ach,
         'contact_form': contact_form,
-        'image_1': image_1,
-        'image_2': image_2,
-        'image_3': image_3,
-        'image_4':image_4
+        'images': images
     }
     return render(request, 'pages/home.html', args)

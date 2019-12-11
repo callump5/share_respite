@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block base %}
-    <section class="landing" style="background-image: url('{{ image_1.img.url }}')">
+    <section class="landing" style="background-image: url({% for item in images %}
+            {% if forloop.counter0 == 1 %}
+                {{ item.img.url }}
+                {% endif %}
+            {% endfor %})">
         <div class="landing__headers">
             <img class="landing__headers--logo"
                  src="/static/images/logo/logo.png"
@@ -16,7 +20,13 @@
     <div class="u-container">
         <section class="home">
             <div class="row">
-                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{{ image_2.img.url }}"></div>
+                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{% for item in images %}
+            {% if forloop.counter0 == 3 %}
+                {{ item.img.url }}
+                {% endif %}
+            {% endfor %})"></div>
+
+            style="background-image: url(
                 <div class="col-1-of-2 u-autoescaped">
                     {% for text in landing %}
                         {% autoescape off %}
@@ -83,7 +93,11 @@
                     <div class="slide">
                         <div class="slide__inner">
                             <div class="slide__card--front">
-                                <div class="slide__card--front--img" style="background-image: url( {{ staff.img.url }})"></div>
+                                <div class="slide__card--front--img" style="background-image: url({% for item in images %}
+            {% if forloop.counter0 == 2 %}
+                {{ item.img.url }}
+                {% endif %}
+            {% endfor %})"></div>
                                 <p class="slide__card--front--staff">{{ staff.first_name }}</p>
                                 <p class="slide__card--front--role">{{ staff.role }}</p>
                             </div>
@@ -102,7 +116,12 @@
         </div>
     </section>
 
-    <section class="donation__banner" style="background-image: url('{{ image_4.img.url }}')">
+    <section class="donation__banner"
+         style="background-image: url({% for item in images %}
+            {% if forloop.counter0 == 3 %}
+                {{ item.img.url }}
+                {% endif %}
+            {% endfor %})">
         <div class="u-container">
             <div class="donation__banner--text">
                 <h2 class="heading__secondary u-text-left u-margin-small">Donations For Share</h2>
