@@ -16,25 +16,26 @@
         <div class="u-container">
 
             <div class="row">
-                <div class="col-2-of-3 u-autoescaped u-margin-small">
-                   {% for text in text %}
-                       {% autoescape off %}
-                            {{ text.text }}
-                       {% endautoescape %}
-                   {% endfor %}
-                    <p class="donation__banner--text--ach u-margin-big">Achieved: <span>£{{ ach }}</span></p>
-
+                <div class="col-2-of-3">
+                    <div class=" u-autoescaped u-margin-small">
+                       {% for text in text %}
+                           {% autoescape off %}
+                                {{ text.text }}
+                           {% endautoescape %}
+                       {% endfor %}
+                        <p class="donation__banner--text--ach">Achieved: <span>£{{ ach }}</span></p>
+                    </div>
                 </div>
                 <div class="col-1-of-3">
-                <div class="donations__form">
+                    <div class="donations__form">
 
-                    <img src="/static/images/logo/logo.png" class="donations__form--logo">
-                    <p class="u-text-smaller paragraph u-margin-medium">If you would like to help contribute to our cause you can enter a donation below and follow the payment steps. All donations are greatly appreciated.</p>
+                        <img src="/static/images/logo/logo.png" class="donations__form--logo">
+                        <p class="u-text-smaller paragraph u-margin-medium">If you would like to help contribute to our cause you can enter a donation below and follow the payment steps. All donations are greatly appreciated.</p>
 
-                    <input placeholder="£10.00" type="number" class="donations__form--input" name="message" id="user_input">
+                        <input placeholder="£10.00" type="number" class="donations__form--input" name="message" id="user_input">
 
-                    <button type="submit" class="button__primary u-full-width" onclick="showInput();">Donate</button>
-                </div>
+                        <button type="submit" class="button__primary u-full-width" onclick="showInput();">Donate</button>
+                    </div>
                 </div>
             </div>
         </div>

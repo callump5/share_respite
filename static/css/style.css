@@ -604,7 +604,7 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
       width: 100%;
       height: 100%;
       text-align: center;
-      transition: transform 0.8s;
+      transition: all .4s linear;
       transform-style: preserve-3d; }
     .slide__card--front {
       width: 100%;

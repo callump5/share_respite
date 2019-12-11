@@ -73,7 +73,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-        transition: transform 0.8s;
+        transition: all .4s linear;
         transform-style: preserve-3d;
     }
     &__card {
@@ -95,7 +95,6 @@
                 padding: 1rem 0 0 0;
                 color: #08b2e3;
             }
-
             &--role {
                 text-align: center;
                 font-size: 2rem;
