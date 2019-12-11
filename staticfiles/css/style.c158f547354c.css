@@ -240,7 +240,7 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
 
 .donation__banner {
   padding: 12rem 0;
-  background-image: url("/static/images/landing/back5.jpg");
+  background-image: url("/static/images/landing/back5.5728d3e35587.jpg");
   background-color: rgba(121, 121, 121, 0.81);
   background-blend-mode: multiply;
   background-size: cover;
@@ -371,7 +371,7 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
     position: absolute; } }
 
 .corkboard {
-  background-image: url("/static/images/corkboard.jpg");
+  background-image: url("/static/images/corkboard.67181c871a4d.jpg");
   background-size: cover;
   border: 8px solid burlywood;
   padding: 1rem; }
@@ -815,7 +815,7 @@ table {
 /* Landing */
 .landing {
   position: relative;
-  background-image: url("/static/images/landing/back9.jpg");
+  background-image: url("/static/images/landing/back9.691e690291f3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -956,7 +956,7 @@ table {
 
 .chalkboard {
   height: 55rem;
-  background-image: url("/static/images/blackboard.jpg");
+  background-image: url("/static/images/blackboard.e64eb7ed434b.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border: 0.8rem solid burlywood;
