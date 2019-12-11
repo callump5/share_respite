@@ -20,11 +20,7 @@
     <div class="u-container">
         <section class="home">
             <div class="row">
-                <div class="col-1-of-2"><div class="home__img--1" alt="Home image 1"  style="background-image: url({% for item in images %}
-            {% if forloop.counter0 == 0 %}
-                {{ item.img.url }}
-                {% endif %}
-                {% endfor %})"></div></div>
+                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{% for item in images %}{% if forloop.counter0 == 1 %}{{ item.img.url }}{% endif %}{% endfor %}"></div>
 
             style="background-image: url(
                 <div class="col-1-of-2 u-autoescaped">
@@ -78,11 +74,11 @@
                         {% endautoescape %}
                     {% endfor %}
                 </div>
-            <div class="home__about--img" alt="Home image 2"  style="background-image: url({% for item in images %}
-            {% if forloop.counter0 == 3 %}
+            <img class="home__about--img" alt="Home image 2" src="{% for item in images %}
+            {% if forloop.counter0 == 2 %}
                 {{ item.img.url }}
                 {% endif %}
-            {% endfor %})"></div>
+            {% endfor %}">
         </section>
     </div>
 
