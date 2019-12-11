@@ -19,7 +19,7 @@
                 <div class="col-2-of-3">
                    {% for text in text %}
                        {% autoescape off %}
-                            {{ text }}
+                            {{ text.text }}
                        {% endautoescape %}
                    {% endfor %}
                     <p class="donation__banner--text--ach u-margin-big">Achieved: <span>{{ ach }}</span></p>
