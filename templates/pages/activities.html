@@ -15,7 +15,7 @@
             <div class="policies__table">
                 {% for activity in activities %}
                         <div class="policies__table__entry">
-                            <p class="policies__table__entry--title">{{ activity.date }}</p>
+                            <p class="policies__table__entry--title">{{ activity.week }}</p>
                             <a class="policies__table__entry--link" href="{{ activity.file.url }}"><img src="/static/icons/file_download.png"></a>
                         </div>
                 {% endfor %}
