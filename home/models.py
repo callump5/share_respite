@@ -48,6 +48,25 @@ class HomeAboutText(models.Model):
     def clean(self):
         validate_only_one_instance(self)
 
+
+
+class HomeImages(models.Model):
+    img = models.ImageField(upload_to=upload_site_img)
+    rank = models.IntegerField()
+
+    def __str__(self):
+        return "Home Image - " + str(self.id)
+
+    class Meta():
+        verbose_name = "Home Image"
+        verbose_name_plural = "3 - Home Images"
+
+    def clean(self):
+        validate_only_one_instance(self)
+
+
+
+
 class Sponser(models.Model):
     name = models.CharField(max_length=300)
     img = models.ImageField(upload_to=upload_site_img)
@@ -58,4 +77,4 @@ class Sponser(models.Model):
 
     class Meta():
         verbose_name = 'Sponser'
-        verbose_name_plural = '3 - Sponsers'
+        verbose_name_plural = '4 - Sponsers'

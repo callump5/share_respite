@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 
-from .models import HomeLandingText, HomeAboutText, Sponser
+from .models import HomeLandingText, HomeAboutText, Sponser, HomeImages
 from contact.forms import ContactRequestForm
 
 from staff.models import Staff
@@ -26,6 +26,10 @@ def index(request):
     about = HomeAboutText.objects.all()
     staff = Staff.objects.all()
     sponsers = Sponser.objects.all()
+    image_1 = HomeImages.objects.get(pk=1)
+    image_2 = HomeImages.objects.all().get(pk=2)
+    image_3 = HomeImages.objects.all().get(pk=3)
+    image_4 = HomeImages.objects.all().get(pk=4)
 
     donations = Donation.objects.all()
     ach = 0
@@ -72,8 +76,10 @@ def index(request):
         'staff': staff,
         'sponsers':sponsers,
         'ach': ach,
-        'contact_form': contact_form
-
+        'contact_form': contact_form,
+        'image_1': image_1,
+        'image_2': image_2,
+        'image_3': image_3,
+        'image_4':image_4
     }
-
     return render(request, 'pages/home.html', args)

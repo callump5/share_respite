@@ -16,7 +16,7 @@
                             <div class="staff-gallery__staff">
                                 <div class="staff-gallery__staff__img" style="background-image: url({{ staff.img.url }})"></div>
                                 <div class="staff-gallery__staff__text">
-                                    <p class="staff-gallery__staff__text--staff">{{ staff.first_name }} {{ staff.last_name }}</p>
+                                    <p class="staff-gallery__staff__text--staff  u-margin-small">{{ staff.first_name }} {{ staff.last_name }}</p>
                                     <div class="staff-gallery__staff__text--bio u-autoescaped u-text-smaller">
                                         {% autoescape off %}
                                             {{ staff.bio }}
@@ -30,5 +30,28 @@
             </section>
         {% endif %}
     {% endfor %}
+
+    <section class="u-offset--trustee">
+        {% for role in trustee_roles %}
+            <div class="u-container">
+            <h1 class="heading__secondary heading__secondary--white u-margin-medium">{{ role.role }}s</h1>
+                {% for trustee in trustees %}
+                    <div class="staff-gallery__staff">
+                        <div class="staff-gallery__staff__img" style="background-image: url({{ trustee.img.url }})"></div>
+                        <div class="staff-gallery__staff__text">
+                            <p class="staff-gallery__staff__text--staff ">{{ trustee.first_name }} {{ trustee.last_name }}</p>
+                            <div class="u-margin-small"><a class="staff-gallery__staff__text--company" href="{{ trustee.link }}">{{ trustee.company }}</a> </div>
+
+                            <div class="staff-gallery__staff__text--bio u-autoescaped u-text-smaller">
+                                        {% autoescape off %}
+                                            {{ trustee.bio }}
+                                        {% endautoescape %}
+                                    </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </section>
 
 {% endblock %}

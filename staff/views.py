@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 
-from .models import StaffRole, Staff
+from .models import StaffRole, Staff, TrusteeSection, Trustee
 from home.models import Sponser
 
 from contact.forms import ContactRequestForm
@@ -17,7 +17,9 @@ import requests
 
 def get_staff(request):
     roles = StaffRole.objects.all().order_by('rank')
-    staff = Staff.objects.all()
+    staff = Staff.objects.all().order_by('rank')
+    trusteeroles = TrusteeSection.objects.all().order_by('rank')
+    trustees = Trustee.objects.all().order_by('rank')
     sponsers = Sponser.objects.all()
 
 
@@ -59,6 +61,8 @@ def get_staff(request):
         'roles': roles,
         'sponsers':sponsers,
         'staff': staff,
+        'trustees': trustees,
+        'trustee_roles': trusteeroles,
         'contact_form': contact_form
     }
 

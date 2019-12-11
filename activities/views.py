@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from .models import Activity
+from .models import Activity, ActivityBlurb
 from home.models import Sponser
 
 from contact.forms import ContactRequestForm
@@ -19,6 +19,7 @@ from django.conf import settings
 
 def get_activites(request):
     activities = Activity.objects.all()
+    blurb = ActivityBlurb.objects.all()
     sponsers = Sponser.objects.all()
 
     if request.method == 'POST':
@@ -58,6 +59,7 @@ def get_activites(request):
     args = {
         'activities': activities,
         'sponsers': sponsers,
-        'contact_form': contact_form
+        'contact_form': contact_form,
+        'blurb': blurb
     }
     return render(request, 'pages/activities.html', args)

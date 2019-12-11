@@ -7,28 +7,19 @@
 {% block base %}
     <section class="activity">
         <div class="u-container">
-            <table class="activity__table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Activities</th>
-                        <th>Items To Bring</th>
-                        <th>Meeting Area</th>
-                        <th>Slots</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for activity in activities %}
-                        <tr>
-                            <td>{{ activity.date.day }}/{{ activity.date.month }}</td>
-                            <td><span class="u-bold">{{ activity.title }}</span> - {{ activity.activity}}!</td>
-                            <td>{{ activity.items }}</td>
-                            <td>{{ activity.meeting }}</td>
-                            <td>{{ activity.slots }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            {% for blurb in blurb %}
+                <p class="paragraph u-text-center u-margin-big">{{ blurb.text }}</p>
+            {% endfor %}
+
+            <h2 class="policies__table--heading">Activity Schedules</h2>
+            <div class="policies__table">
+                {% for activity in activities %}
+                        <div class="policies__table__entry">
+                            <p class="policies__table__entry--title">{{ activity.date }}</p>
+                            <a class="policies__table__entry--link" href="{{ activity.file.url }}"><img src="/static/icons/file_download.png"></a>
+                        </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}

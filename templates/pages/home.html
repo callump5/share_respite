@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block base %}
-    <section class="landing">
+    <section class="landing" style="background-image: url('{{ image_1.img.url }}')">
         <div class="landing__headers">
             <img class="landing__headers--logo"
                  src="/static/images/logo/logo.png"
@@ -11,12 +11,12 @@
     </section>
 
 
-    <h1 class="heading__primary"><div class="u-container">Do you htai a disabled child? (aged 3-19 years)</div></h1>
+    <h1 class="heading__primary"><div class="u-container">Do you have a disabled child? (aged 3-19 years)</div></h1>
 
     <div class="u-container">
         <section class="home">
             <div class="row">
-                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="/static/images/landing/back4.jpg"></div>
+                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{{ image_2.img.url }}"></div>
                 <div class="col-1-of-2 u-autoescaped">
                     {% for text in landing %}
                         {% autoescape off %}
@@ -68,7 +68,7 @@
                         {% endautoescape %}
                     {% endfor %}
                 </div>
-            <img class="home__about--img" alt="Home image 2" src="/static/images/landing/back7.jpg">
+            <img class="home__about--img" alt="Home image 2" src="{{ images_3.img.url }}">
         </section>
     </div>
 
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-    <section class="donation__banner">
+    <section class="donation__banner" style="background-image: url('{{ image_4.img.url }}')">
         <div class="u-container">
             <div class="donation__banner--text">
                 <h2 class="heading__secondary u-text-left u-margin-small">Donations For Share</h2>
