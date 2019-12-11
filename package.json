@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass scss/main.scss static/css/style.css -w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.4.1",
     "slick-slider": "^1.8.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
   }
 }
