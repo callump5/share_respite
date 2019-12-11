@@ -61,12 +61,6 @@ class HomeImages(models.Model):
         verbose_name = "Home Image"
         verbose_name_plural = "3 - Home Images"
 
-    def clean(self):
-        validate_only_one_instance(self)
-
-
-
-
 class Sponser(models.Model):
     name = models.CharField(max_length=300)
     img = models.ImageField(upload_to=upload_site_img)
