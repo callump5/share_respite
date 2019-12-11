@@ -20,7 +20,7 @@
     <div class="u-container">
         <section class="home">
             <div class="row">
-                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{{% for item in images %}
+                <div class="col-1-of-2"><img class="home__img--1" alt="Home image 1" src="{% for item in images %}
             {% if forloop.counter0 == 1 %}
                 {{ item.img.url }}
                 {% endif %}
@@ -78,11 +78,11 @@
                         {% endautoescape %}
                     {% endfor %}
                 </div>
-            <img class="home__about--img" alt="Home image 2" src="{{% for item in images %}
+            <img class="home__about--img" alt="Home image 2" src="{% for item in images %}
             {% if forloop.counter0 == 2 %}
                 {{ item.img.url }}
                 {% endif %}
-            {% endfor %})"></div>
+            {% endfor %})">
         </section>
     </div>
 
@@ -97,7 +97,7 @@
                     <div class="slide">
                         <div class="slide__inner">
                             <div class="slide__card--front">
-                                div class="slide__card--front--img" style="background-image: url( {{ staff.img.url }})"></div>
+                                <div class="slide__card--front--img" style="background-image: url( {{ staff.img.url }})"></div>
                                 <p class="slide__card--front--staff">{{ staff.first_name }}</p>
                                 <p class="slide__card--front--role">{{ staff.role }}</p>
                             </div>
