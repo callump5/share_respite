@@ -604,13 +604,15 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
       width: 100%;
       height: 100%;
       text-align: center;
-      transition: transform 0.8s;
+      transition: all .4s linear;
       transform-style: preserve-3d; }
     .slide__card--front {
       width: 100%;
       box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
       position: absolute;
-      backface-visibility: hidden; }
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      /* again */ }
       .slide__card--front--img {
         width: 100%;
         height: 30rem;
@@ -627,7 +629,7 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
         padding: .5rem 0 1rem 0; }
     .slide__card--back {
       display: block;
-      overflow: scroll;
+      overflow: hidden;
       height: 38.8rem;
       width: 100%;
       box-shadow: 0.1rem 0.1rem 0.5em 0.5rem rgba(40, 40, 40, 0.18);
@@ -635,6 +637,8 @@ h1, h2, p, a, th, td, label, input, li, .donations__form--errors, textarea {
       backface-visibility: hidden;
       background-color: white;
       transform: rotateY(180deg); }
+      .slide__card--back:hover {
+        overflow-y: scroll; }
       .slide__card--back--staff {
         font-size: 2.3rem;
         padding-bottom: .5rem;
