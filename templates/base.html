@@ -9,6 +9,8 @@
 
     {% if messages %}
         <ul class="messages u-container">
+
+        
             {% for message in messages %}
                 <li class="messages messages__{{ message.tags }}">{{ message }}</li>
             {% endfor %}
