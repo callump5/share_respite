@@ -8,9 +8,13 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os
-
+from django.conf.global_settings import DEBUG
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'share_settings.dev')
+if DEBUG == True:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'share_settings.dev')
+else:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'share_settings.staging')
+
 
 application = get_wsgi_application()
