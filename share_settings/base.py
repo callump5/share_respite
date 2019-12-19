@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '127.0.0.1:8000',
     'share-respite-site.herokuapp.com',
+    'share-django-site.herokuapp.com'
 ]
 
 
